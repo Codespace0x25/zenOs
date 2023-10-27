@@ -10,11 +10,11 @@ BOOTLOADER_SRC = boot.s
 GDT_SRC = gdt.asm
 SWITCH_TO_32BIT_SRC = switch-to-32bit.asm
 DISK_SRC = disk.asm
-KERNEL_SRC = kernel.cpp
+KERNEL_SRC = kernel.c
 
 # Compilation flags
 NASM = nasm
-GCC = g++
+GCC = gcc
 LD = ld
 RM = rm -f
 QEMU = qemu-system-i386
