@@ -47,25 +47,7 @@ void set_char_at_video_memory(char character, int offset)
     vidmem[offset + 1] = WHITE_ON_BLACK;
 }
 
-void print_string(char *string)// this fun == printf("%s\n")
-{
-    int offset = get_cursor();
-    int i = 0;
-    while (string[i] != 0) 
-    {
-        if (offset >= MAX_ROWS * MAX_COLS * 2) {
-            offset = scroll_ln(offset);
-        }
-        if (string[i]=='\n') {
-            offset =move_offset_to_now_line(offset);
-        }else{
-            set_char_at_video_memory(string[i],offset);
-            offset += 2;
-        }
-        i++;
-    }
-    set_cursor(offset);
-}
+
 
 int get_row_from_offset(int offset)
 {
@@ -111,7 +93,25 @@ void clear_screen() {
     set_cursor(get_offset(0,0));
 }
 
-
+void print_string(char *string)// this fun == printf("%s\n")
+{
+    int offset = get_cursor();
+    int i = 0;
+    while (string[i] != 0) 
+    {
+        if (offset >= MAX_ROWS * MAX_COLS * 2) {
+            offset = scroll_ln(offset);
+        }
+        if (string[i]=='\n') {
+            offset =move_offset_to_now_line(offset);
+        }else{
+            set_char_at_video_memory(string[i],offset);
+            offset += 2;
+        }
+        i++;
+    }
+    set_cursor(offset);
+}
 
 
 
