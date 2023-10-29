@@ -18,7 +18,7 @@ unsigned char port_byte_in(unsigned short port) //reads the port in
 }
 void port_byte_out(unsigned short port, unsigned char data) //give the output
 {
-    __asm__("out %%al, %%bx" : : "a" (data), "d" (port));
+    __asm__(" out %%al, %%dx" : : "a" (data), "d" (port));
 }
 
 void set_cursor(int offset)// puts the cursor on screen
@@ -118,7 +118,7 @@ void print_string(char *string)// this fun == printf("%s\n")
 void Main() //were the kernel is started
 {
     clear_screen();
-    print_string("hi \n im olivia");
+    print_string("hi \n im olivia"); 
 
     // Halt the CPU or enter an infinite loop
     while (1);
