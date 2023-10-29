@@ -1,0 +1,14 @@
+{
+  Kernel_fun:{
+    print_string:{
+      "held_in":"./dirvers/display.h",
+      "decripson":"is just like the printf funshon in the stdlib."
+      
+    },
+    clear_screen:{
+      "held_in":"./dirvers/display.h",
+      "decripson":"puts empty cerrites on the screen to cover it then move the cerser back to the top left."
+    }
+  }
+}
+
