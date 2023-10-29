@@ -1,4 +1,4 @@
-//kernel.c
+//drivers/display.h
 #define VGA_CTRL_REGISTER 0x3B4
 #define VGA_DATA_REGISTER 0x3D5
 #define VGA_OFFSET_LOW 0x0F
