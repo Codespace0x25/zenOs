@@ -30,7 +30,7 @@ jmp $
 [bits 16]
 load_kernel:
   mov bx, KERNEL_OFFSET
-  mov dh, 2
+  mov dh, 16
   mov dl, [boot_drive]
   call disk_load
   ret

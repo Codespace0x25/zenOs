@@ -14,13 +14,13 @@ KERNEL_SRC = kernel.c
 
 # Compilation flags
 NASM = nasm
-GCC = gcc
+GCC = clang
 LD = ld
 RM = rm -f
 QEMU = qemu-system-i386
 
 NASM_FLAGS = -f bin
-GCC_FLAGS = -Wall -T linker.ld -m32 -nostdlib -fno-builtin -ffreestanding -c 
+GCC_FLAGS = -Wall -T linker.ld -m32 -nostdlib -fno-builtin -ffreestanding -target "i386-elf" -eMain
 # Targets
 all: $(BOOTABLE_IMG)
 
@@ -28,6 +28,7 @@ $(BOOTLOADER_BIN): $(BOOTLOADER_SRC)
 	$(NASM) $(NASM_FLAGS) $< -o $@
 
 $(KERNEL_BIN): $(KERNEL_SRC)
+	nasm -f elf32 -o startup.o startup.nasm
 	$(GCC) $(GCC_FLAGS) $< -o $@
 
 $(BOOTABLE_BIN): $(BOOTLOADER_BIN) $(KERNEL_BIN)
