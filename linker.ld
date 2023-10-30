@@ -1,5 +1,5 @@
 OUTPUT_FORMAT(binary)
-ENTRY(Main)
+STARTUP(startup.o)
 
 SECTIONS {
     . = 0x1000;
