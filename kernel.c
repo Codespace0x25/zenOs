@@ -3,7 +3,7 @@
 
 void Main() //were the kernel is started
 {
-    
+    clear_screen();
     print_string("hi \n im olivia"); 
 
     // Halt the CPU or enter an infinite loop
