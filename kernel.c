@@ -4,7 +4,7 @@
 void Main() //were the kernel is started
 {
     clear_screen();
-    print_string("hi \n im olivia"); 
+    print_string("hi\nim mr.fenn"); 
 
     // Halt the CPU or enter an infinite loop
     while (1){
