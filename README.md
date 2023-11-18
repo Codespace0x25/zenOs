@@ -19,3 +19,6 @@ make shore you have the packages folloing
 this is going to be a unix like, like linux. 
 
 it you want to supout me you can whach me on twitch.<a href="https://twitch.com/codespace25">@codespace25</a>
+
+
+
