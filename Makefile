@@ -20,7 +20,7 @@ RM = rm -f
 QEMU = qemu-system-i386
 
 NASM_FLAGS = -f bin
-GCC_FLAGS = -Wall -T linker.ld -m32 -nostdlib -fno-builtin -ffreestanding -target "i386-elf" -eMain
+GCC_FLAGS = -Wall -T linker.ld -m32 -nostdlib -fno-builtin -ffreestanding -target "i386-elf" -eMain -I.
 # Targets
 all: $(BOOTABLE_IMG)
 
