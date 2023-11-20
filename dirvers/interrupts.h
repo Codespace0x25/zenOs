@@ -1,8 +1,9 @@
+#pragma once
 
-#ifndef INTERRUPTS_H
-#define INTERRUPTS_H
 
 #include <stdint.h>
+
+char idt[255];
 
 // Define the structure of an IDT gate
 typedef struct {
@@ -85,4 +86,4 @@ static inline void init_keyboard() {
       33, keyboard_callback); // Register keyboard handler for IRQ 1
 }
 
-#endif // INTERRUPTS_H
+
