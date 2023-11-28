@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-char idt[255];
+char idt[256];
 
 // Define the structure of an IDT gate
 typedef struct {
