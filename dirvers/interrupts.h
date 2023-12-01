@@ -16,10 +16,10 @@ typedef struct {
 
 // Define the structure for passing registers to ISRs
 typedef struct {
-  uint32_t ds;
-  uint32_t edi, esi, ebp, esp, ebx, edx, ecx, eax;
-  uint32_t int_no, err_code;
-  uint32_t eip, cs, eflags, useresp, ss;
+    uint32_t eip, cs;
+    uint32_t eflags;
+    uint32_t esp, ss;
+    uint32_t es, ds, fs, gs;
 } registers_t;
 
 // Define an array of ISR functions
@@ -42,7 +42,7 @@ static inline void load_idt() {
 }
 
 // Function to handle internal interrupts
-static inline void isr_handler(registers_t *r) {
+__attributw__ ((interupt)) void isr_handler(registers_t *r) {
   if (interrupt_handlers[r->int_no] != 0) {
     isr_t handler = interrupt_handlers[r->int_no];
     handler(r);

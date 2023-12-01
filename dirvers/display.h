@@ -13,7 +13,7 @@
 unsigned char port_byte_in(unsigned short port) //reads the port in
 {
     unsigned char result;
-    __asm__("in %%dx, %%al" : "=a" (result) : "d" (port));
+    _asm__("in %%dx, %%al" : "=a" (result) : "d" (port));
     return result;
 }
 void port_byte_out(unsigned short port, unsigned char data) //give the
