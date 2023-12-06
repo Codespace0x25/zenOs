@@ -26,7 +26,7 @@ jmp $
 %include "disk.asm"
 %include "gdt.asm"
 %include "switch-to-32bit.asm"
-
+%include "idtinstall.asm"
 [bits 16]
 load_kernel:
   mov bx, KERNEL_OFFSET
