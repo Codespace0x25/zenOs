@@ -20,6 +20,7 @@ init_32bit:
 
   mov ebp, 0x90000
   mov esp, ebp
-
+  call test1
+  
   call BEGIN_32BIT
   jmp $
