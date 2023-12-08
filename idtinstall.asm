@@ -1,4 +1,4 @@
-int_handler:
+ int_handler:
     mov ax, LINEAR_DATA_SELECTOR
     mov gs, ax
     mov dword [gs:0xB8000],') : '
