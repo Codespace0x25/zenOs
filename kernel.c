@@ -9,5 +9,6 @@ void kernel_main() {
     // Initialize the IDT and install ISRs
     while (1) {
         // Your kernel logic...
+        print_string('h')
     }
 }
