@@ -27,6 +27,7 @@ jmp $
 %include "gdt.asm"
 %include "switch-to-32bit.asm"
 %include "idtinstall.asm"
+
 [bits 16]
 load_kernel:
   mov bx, KERNEL_OFFSET
@@ -38,6 +39,7 @@ load_kernel:
 [bits 32]
 BEGIN_32BIT:
   call KERNEL_OFFSET
+  
   jmp $
 boot_drive: db 0
 times 510 - ($-$$) db 0
